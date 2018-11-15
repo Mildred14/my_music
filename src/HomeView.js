@@ -3,21 +3,23 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
+import ArtistList from './ArtistList'
 import {getMusicData} from './api-client'
+
 export default class HomeView extends Component<Props>{
     state={
-        artist: null
+        artists: null
     }
 
 componentDidMount() {
-    getMusicData().then(data => this.setState({artist: data}))
+    getMusicData().then(data => this.setState({artists: data}))
 }
 render(){
-    const artist = this.state.artist
-    console.warn(artist)
-
+    const artists = this.state.artists
+    
     return(
-        <View style={StyleSheet.container}>
+        <View style={styles.container}>
+        {artists && <ArtistList artists ={artists}/>}
         </View>
     );
 }

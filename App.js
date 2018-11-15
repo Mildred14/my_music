@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LoginView from './src/LoginView';
 import HomeView from './src/HomeView';
+import ArtistDetailView from './src/ArtistDetailView';
 import {Actions, Scene, Router} from 'react-native-router-flux';
  import {Platform, StyleSheet, Text, View, Button, Switch, TextInput, Alert} from 'react-native';
 
@@ -8,6 +9,7 @@ import {Actions, Scene, Router} from 'react-native-router-flux';
    <Scene key="root">
       <Scene key= "login" component={LoginView} hideNavBar/>
       <Scene key= "home" component={HomeView} hideNavBar/>
+      <Scene key= "artistDetail" component={ArtistDetailView} title="Detalles" hideNavBar={false}/>
    </Scene>
  )
  const instructions = Platform.select({
